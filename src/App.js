@@ -70,7 +70,9 @@ function App() {
             )
           }
 
-          { status === 'error' && <div>Unknown error </div> }
+          { status === 'error' && 
+            <div className="text-red-400">Failed to fetch data!</div> 
+          }
           
         </div>
 
