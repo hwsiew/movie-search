@@ -1,0 +1,15 @@
+.img-holder {
+	height: 150px;
+}
+
+.img-holder::after {
+	content: '';
+	position: absolute;
+	top:0;
+	right:0;
+	width: 0;
+	border-right: solid 20px white;
+	border-top-width: 150px;
+	border-top-color: transparent;
+	border-top-style: solid;
+}
