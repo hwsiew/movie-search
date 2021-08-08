@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('http://fonts.cdnfonts.com/css/helvetica-neue-9');
+
+@layer base {
+
+	body {
+		font-family: 'Helvetica Neue', sans-serif;
+		@apply text-body bg-gray-100; 
+	}
+
+}
+
+@layer components{
+
+	/* Default style for List */
+	.default-paper { 
+		@apply flex bg-white p-2 items-center;
+	}
+
+	.default-appBar {
+		@apply w-screen bg-white;
+	}
+
+	.default-searchBar {
+		@apply flex items-center p-1 box-border border-2 border-white;
+	}
+
+	.default-card {
+		@apply flex p-0 rounded-md relative items-stretch;
+	}
+
+	.default-pagination {
+		@apply my-5;
+	}
+}
