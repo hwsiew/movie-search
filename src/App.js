@@ -42,8 +42,8 @@ function App() {
   };
 
   return (
-    <div className="h-full w-screen">
-      <AppBar elevation={2} className="rounded-bl-md rounded-br-md p-3 box-border">
+    <div className="h-full w-full">
+      <AppBar elevation={2} className="rounded-bl-md rounded-br-md p-3 box-border w-full">
         <Logo />
         <div className="flex-grow"></div>
       </AppBar>
@@ -73,6 +73,7 @@ function App() {
           { status === 'error' && <div>Unknown error </div> }
           
         </div>
+
         {
           status === 'success' && data.Response === 'True' &&
           <Pagination 
