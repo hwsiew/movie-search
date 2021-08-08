@@ -14,7 +14,9 @@ function Pagination (props) {
 
 	let rootCls = classNames('default-pagination', className);
 
-	let pages = new Array(display).fill(0).map((p,i) => {
+	// an array of pages to be displayed
+	let pages = new Array(total < display ? total : display).fill(0).map((p,i) => {
+		if(total < display) return i+1;
 		return active+display > total ?  total-display+1 + i : active + i ;
 	});
 
