@@ -12,7 +12,7 @@ export default function useMovieSearch ( { query , page } ) {
 
 		let queryStr = Object.keys(params).map(key => key + '=' + encodeURIComponent(params[key]) ).join('&');
 
-    return fetch(`http://www.omdbapi.com/?${queryStr}`).then(res => res.json());
+    return fetch(`https://www.omdbapi.com/?${queryStr}`).then(res => res.json());
   });
 
 	return [data, status];
