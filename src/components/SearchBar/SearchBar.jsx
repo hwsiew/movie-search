@@ -1,8 +1,19 @@
 import classNames from "classnames";
 import 'boxicons';
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Paper from '../Paper';
 import PropTypes from 'prop-types';
+
+// debounce function
+const debounce = function(fn, delay = 500){
+	let timer;
+	return function(...args){
+			clearTimeout(timer);
+			timer = setTimeout(() => {
+				fn.apply(this, args)
+			}, delay)
+	}
+}
 
 function SearchBar (props) {
 
@@ -21,8 +32,12 @@ function SearchBar (props) {
 		'border-primary': focus,
 	});
 
+	const onSeachDebounce = useCallback(debounce(onSearch),[onSearch]);
+
 	const handleChange = function(event){
-		setQuery(event.target.value);
+		let value = event.target.value;
+		setQuery(value);
+		onSeachDebounce(event,value);
 	}
 
 	const handleEnter = function(event){
